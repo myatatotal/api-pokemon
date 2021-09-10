@@ -4,5 +4,8 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  background-color: #e9f2b2 !important;
+  background-image: url('./assets/img/bg.jpg') !important;
+  background-size: contain;
+  background-repeat: repeat;
+
 }
