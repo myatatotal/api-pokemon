@@ -13,12 +13,6 @@ export class PokepageComponent implements OnInit {
 
 pokes: Array<any> = new Array();
 
-  // cartas = [
-  //   { id:1, Name: 'Test 1'},
-  //   { id:2, Name: 'Test 2'},
-  //   { id:3, Name: 'Test 3'}
-  // ]
-
   constructor(private PokemonctgService: ApiService) { }
 
   ngOnInit() {
@@ -27,7 +21,6 @@ pokes: Array<any> = new Array();
 
   listar() {
     this.PokemonctgService.listar().subscribe(dados => this.pokes = dados);
-    // this.PokemonctgService.listar().subscribe(dados => this.maca = dados);
   }
 
 }

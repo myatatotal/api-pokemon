@@ -1,46 +1,41 @@
-
-<div class="container">
-  <div class="nova">
-    <img src="../assets/img/gengar.jpeg">
-
-  </div>
-  <div class="stage">
-    <h3>Bem-vindo ao Pokemon TCG</h3>
-    <p>Digite o nome do Pokemon a ser pesquisado...</p>
-  </div>
-  <div class="busca">
-      <input class="busca" id="busca" #busca />
-      <button type="button" class="btn btn-warning btn-sm botao" (click)="getCardByName(busca.value)">Pesquisar</button>
-  </div>
-</div>
-
-<div class="container">
-  <div class="card list-card">
-    <h5 class="card-header">Lista de pokemons</h5>
-    <div class="card-body">
-      <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">imageUrl</th>
-              <th scope="col">Name</th>
-              <th scope="col">Id</th>
-              <th scope="col">Types</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of card.cards">
-              <td><img  class="images" src="{{item.imageUrl}}"/></td>
-              <td>{{item.name}}</td>
-              <td>{{item.id}}</td>
-              <td *ngIf="item.types != null">{{item.types.join(", ")}}</td>
-            </tr>
-          </tbody>
-        </table>
+<div class="maincontainer">
+  <div class="container">
+    <div class="nova">
+      <img src="../assets/img/gengar.jpeg">
 
     </div>
-  </div>
+    <div class="stage">
+      <h3>Bem-vindo ao Pokemon TCG</h3>
+      <p>Digite o nome do Pokemon a ser pesquisado...</p>
+    </div>
+    <div class="busca">
+        <input class="busca" id="busca" #busca />
+        <button type="button" class="btn btn-warning btn-sm botao" (click)="getCardByName(busca.value)">Pesquisar</button>
+    </div>
 
+    <div class="card list-card">
+      <h5 class="card-header">Lista de pokemons</h5>
+      <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Id</th>
+                <th scope="col">Types</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of card.cards">
+                <td><img  class="images" src="{{item.imageUrl}}"/></td>
+                <td>{{item.name}}</td>
+                <td>{{item.id}}</td>
+                <td *ngIf="item.types != null">{{item.types.join(", ")}}</td>
+              </tr>
+            </tbody>
+          </table>
 
-
-
+      </div>
+    </div>
+</div>
 <router-outlet></router-outlet>
